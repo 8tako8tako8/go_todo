@@ -3,6 +3,7 @@ package config
 import (
 	"log"
 
+	"github.com/8tako8tako8/go_todo/utils"
 	"gopkg.in/go-ini/ini.v1"
 )
 
@@ -17,6 +18,7 @@ var Config ConfigList
 
 func init() {
 	LoadConfig()
+	utils.LoggingSettings(Config.LogFile)
 }
 
 func LoadConfig() {
